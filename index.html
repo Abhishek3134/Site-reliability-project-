@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud-Native E-Commerce Platform: SRE Implementation</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <h1 class="header__title">Cloud-Native E-Commerce Platform: SRE Implementation</h1>
+                <nav class="nav">
+                    <button class="nav__item nav__item--active" data-section="overview">Overview</button>
+                    <button class="nav__item" data-section="architecture">Architecture</button>
+                    <button class="nav__item" data-section="tech-stack">Tech Stack</button>
+                    <button class="nav__item" data-section="sre-practices">SRE Practices</button>
+                    <button class="nav__item" data-section="monitoring">Monitoring</button>
+                    <button class="nav__item" data-section="chaos">Chaos Engineering</button>
+                    <button class="nav__item" data-section="results">Results</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Overview Section -->
+        <section class="section section--active" id="overview">
+            <div class="container">
+                <div class="section__header">
+                    <h2>Project Overview</h2>
+                    <p>Comprehensive SRE transformation of a microservices-based e-commerce platform serving 1M+ daily users</p>
+                </div>
+                
+                <div class="overview-grid">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Project Details</h3>
+                            <div class="project-stats">
+                                <div class="stat">
+                                    <span class="stat__label">Duration</span>
+                                    <span class="stat__value">6 months</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat__label">Team Size</span>
+                                    <span class="stat__value">6 engineers</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat__label">Daily Users</span>
+                                    <span class="stat__value">1M+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Key Achievements</h3>
+                            <div class="achievements">
+                                <div class="achievement">
+                                    <span class="achievement__metric">Service Uptime</span>
+                                    <span class="achievement__improvement">99.9% → 99.99%</span>
+                                </div>
+                                <div class="achievement">
+                                    <span class="achievement__metric">MTTR</span>
+                                    <span class="achievement__improvement">45min → 8min</span>
+                                </div>
+                                <div class="achievement">
+                                    <span class="achievement__metric">Deployment Frequency</span>
+                                    <span class="achievement__improvement">Weekly → Daily</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-card">
+                    <h3>Implementation Timeline</h3>
+                    <div class="timeline">
+                        <div class="timeline__item">
+                            <div class="timeline__marker"></div>
+                            <div class="timeline__content">
+                                <h4>Assessment & Planning</h4>
+                                <span class="timeline__duration">Month 1</span>
+                                <p>Current state analysis, SRE roadmap, Tool selection</p>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__marker"></div>
+                            <div class="timeline__content">
+                                <h4>Infrastructure Setup</h4>
+                                <span class="timeline__duration">Month 2</span>
+                                <p>Terraform modules, Kubernetes clusters, CI/CD pipelines</p>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__marker"></div>
+                            <div class="timeline__content">
+                                <h4>Monitoring Implementation</h4>
+                                <span class="timeline__duration">Month 3</span>
+                                <p>Prometheus setup, Grafana dashboards, Alerting rules</p>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__marker"></div>
+                            <div class="timeline__content">
+                                <h4>SLO Definition</h4>
+                                <span class="timeline__duration">Month 4</span>
+                                <p>SLI/SLO framework, Error budgets, Burn rate alerts</p>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__marker"></div>
+                            <div class="timeline__content">
+                                <h4>Chaos Engineering</h4>
+                                <span class="timeline__duration">Month 5</span>
+                                <p>Chaos experiments, Resilience testing, Failure scenarios</p>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__marker"></div>
+                            <div class="timeline__content">
+                                <h4>Optimization & Handover</h4>
+                                <span class="timeline__duration">Month 6</span>
+                                <p>Performance tuning, Documentation, Team training</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture Section -->
+        <section class="section" id="architecture">
+            <div class="container">
+                <div class="section__header">
+                    <h2>System Architecture</h2>
+                    <p>Cloud-native microservices architecture with comprehensive observability</p>
+                </div>
+                
+                <div class="architecture-diagram">
+                    <div class="arch-layer">
+                        <h3>Load Balancer & CDN Layer</h3>
+                        <div class="arch-components">
+                            <div class="arch-component">
+                                <span>AWS ALB</span>
+                            </div>
+                            <div class="arch-component">
+                                <span>CloudFront CDN</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="arch-layer">
+                        <h3>API Gateway & Service Mesh</h3>
+                        <div class="arch-components">
+                            <div class="arch-component">
+                                <span>Istio Gateway</span>
+                            </div>
+                            <div class="arch-component">
+                                <span>Service Mesh</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="arch-layer">
+                        <h3>Microservices (Kubernetes)</h3>
+                        <div class="arch-components">
+                            <div class="arch-component">
+                                <span>User Service</span>
+                            </div>
+                            <div class="arch-component">
+                                <span>Product Service</span>
+                            </div>
+                            <div class="arch-component">
+                                <span>Order Service</span>
+                            </div>
+                            <div class="arch-component">
+                                <span>Payment Service</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="arch-layer">
+                        <h3>Data Layer</h3>
+                        <div class="arch-components">
+                            <div class="arch-component">
+                                <span>PostgreSQL</span>
+                            </div>
+                            <div class="arch-component">
+                                <span>Redis Cache</span>
+                            </div>
+                            <div class="arch-component">
+                                <span>Elasticsearch</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="arch-layer">
+                        <h3>Observability Stack</h3>
+                        <div class="arch-components">
+                            <div class="arch-component">
+                                <span>Prometheus</span>
+                            </div>
+                            <div class="arch-component">
+                                <span>Grafana</span>
+                            </div>
+                            <div class="arch-component">
+                                <span>Jaeger</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section class="section" id="tech-stack">
+            <div class="container">
+                <div class="section__header">
+                    <h2>Technology Stack</h2>
+                    <p>Modern, cloud-native technologies enabling reliable, scalable operations</p>
+                </div>
+                
+                <div class="tech-grid">
+                    <div class="tech-card" data-tech="kubernetes">
+                        <div class="tech-card__header">
+                            <h3>Kubernetes</h3>
+                            <span class="tech-card__category">Orchestration</span>
+                        </div>
+                        <p>Container orchestration with 3 clusters (dev, staging, prod)</p>
+                        <div class="tech-details" id="kubernetes-details">
+                            <h4>Implementation Details:</h4>
+                            <ul>
+                                <li>Multi-zone EKS clusters with auto-scaling</li>
+                                <li>Spot instances for cost optimization</li>
+                                <li>Network policies for security</li>
+                                <li>RBAC and pod security standards</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tech-card" data-tech="terraform">
+                        <div class="tech-card__header">
+                            <h3>Terraform</h3>
+                            <span class="tech-card__category">Infrastructure as Code</span>
+                        </div>
+                        <p>Complete infrastructure automation and version control</p>
+                        <div class="tech-details" id="terraform-details">
+                            <h4>Implementation Details:</h4>
+                            <ul>
+                                <li>Modular Terraform with remote state</li>
+                                <li>CI/CD integration with automated plans</li>
+                                <li>Environment-specific configurations</li>
+                                <li>Security scanning and compliance checks</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tech-card" data-tech="prometheus">
+                        <div class="tech-card__header">
+                            <h3>Prometheus</h3>
+                            <span class="tech-card__category">Monitoring</span>
+                        </div>
+                        <p>Metrics collection and alerting for all services</p>
+                        <div class="tech-details" id="prometheus-details">
+                            <h4>Implementation Details:</h4>
+                            <ul>
+                                <li>Multi-cluster monitoring with federation</li>
+                                <li>Long-term storage with Thanos</li>
+                                <li>Custom metrics for business KPIs</li>
+                                <li>AlertManager for intelligent routing</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tech-card" data-tech="grafana">
+                        <div class="tech-card__header">
+                            <h3>Grafana</h3>
+                            <span class="tech-card__category">Visualization</span>
+                        </div>
+                        <p>Real-time dashboards and SLO tracking</p>
+                        <div class="tech-details" id="grafana-details">
+                            <h4>Implementation Details:</h4>
+                            <ul>
+                                <li>Custom dashboards for business metrics</li>
+                                <li>SRE golden signals visualization</li>
+                                <li>Automated dashboard provisioning</li>
+                                <li>Role-based access control</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tech-card" data-tech="istio">
+                        <div class="tech-card__header">
+                            <h3>Istio</h3>
+                            <span class="tech-card__category">Service Mesh</span>
+                        </div>
+                        <p>Traffic management, security, and observability</p>
+                        <div class="tech-details" id="istio-details">
+                            <h4>Implementation Details:</h4>
+                            <ul>
+                                <li>mTLS for service-to-service communication</li>
+                                <li>Traffic splitting for canary deployments</li>
+                                <li>Distributed tracing integration</li>
+                                <li>Policy enforcement and rate limiting</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tech-card" data-tech="argocd">
+                        <div class="tech-card__header">
+                            <h3>ArgoCD</h3>
+                            <span class="tech-card__category">GitOps</span>
+                        </div>
+                        <p>Declarative continuous deployment</p>
+                        <div class="tech-details" id="argocd-details">
+                            <h4>Implementation Details:</h4>
+                            <ul>
+                                <li>Git-based deployment workflows</li>
+                                <li>Automated rollbacks on failure</li>
+                                <li>Multi-environment promotion pipelines</li>
+                                <li>Drift detection and auto-sync</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SRE Practices Section -->
+        <section class="section" id="sre-practices">
+            <div class="container">
+                <div class="section__header">
+                    <h2>SRE Practices</h2>
+                    <p>Comprehensive reliability engineering practices and methodologies</p>
+                </div>
+                
+                <div class="practices-grid">
+                    <div class="practice-card">
+                        <h3>Service Level Objectives</h3>
+                        <p>Defined SLOs for availability, latency, and error rate</p>
+                        <div class="practice-details">
+                            <div class="slo-item">
+                                <span class="slo-metric">Availability</span>
+                                <span class="slo-target">99.99%</span>
+                            </div>
+                            <div class="slo-item">
+                                <span class="slo-metric">95th percentile latency</span>
+                                <span class="slo-target">< 200ms</span>
+                            </div>
+                            <div class="slo-item">
+                                <span class="slo-metric">Error rate</span>
+                                <span class="slo-target">< 0.1%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-card">
+                        <h3>Error Budget Management</h3>
+                        <p>Error budget policies and burn rate alerting</p>
+                        <div class="practice-details">
+                            <ul>
+                                <li>Weekly error budget reviews</li>
+                                <li>Automated deployment gates</li>
+                                <li>Fast/slow burn rate alerts</li>
+                                <li>Business impact correlation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="practice-card">
+                        <h3>Incident Response</h3>
+                        <p>Structured incident management and post-mortems</p>
+                        <div class="practice-details">
+                            <ul>
+                                <li>15-minute response time SLA</li>
+                                <li>Automated escalation procedures</li>
+                                <li>Blameless post-mortem culture</li>
+                                <li>Runbook automation and maintenance</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="practice-card">
+                        <h3>Chaos Engineering</h3>
+                        <p>Proactive resilience testing and validation</p>
+                        <div class="practice-details">
+                            <ul>
+                                <li>Weekly chaos experiments</li>
+                                <li>Automated failure injection</li>
+                                <li>Resilience scoring framework</li>
+                                <li>Game day exercises</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monitoring Section -->
+        <section class="section" id="monitoring">
+            <div class="container">
+                <div class="section__header">
+                    <h2>Monitoring & Observability</h2>
+                    <p>Comprehensive monitoring stack with SLO tracking and alerting</p>
+                </div>
+                
+                <div class="monitoring-grid">
+                    <div class="monitoring-card">
+                        <h3>Golden Signals Dashboard</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-card metric-card--healthy">
+                                <div class="metric-header">
+                                    <span class="metric-name">Request Latency</span>
+                                    <span class="status status--success">Healthy</span>
+                                </div>
+                                <div class="metric-value">185ms</div>
+                                <div class="metric-target">Target: < 200ms</div>
+                            </div>
+                            
+                            <div class="metric-card metric-card--healthy">
+                                <div class="metric-header">
+                                    <span class="metric-name">Error Rate</span>
+                                    <span class="status status--success">Healthy</span>
+                                </div>
+                                <div class="metric-value">0.05%</div>
+                                <div class="metric-target">Target: < 0.1%</div>
+                            </div>
+                            
+                            <div class="metric-card metric-card--healthy">
+                                <div class="metric-header">
+                                    <span class="metric-name">Availability</span>
+                                    <span class="status status--success">Healthy</span>
+                                </div>
+                                <div class="metric-value">99.995%</div>
+                                <div class="metric-target">Target: 99.99%</div>
+                            </div>
+                            
+                            <div class="metric-card metric-card--healthy">
+                                <div class="metric-header">
+                                    <span class="metric-name">Saturation</span>
+                                    <span class="status status--success">Healthy</span>
+                                </div>
+                                <div class="metric-value">65%</div>
+                                <div class="metric-target">Target: < 80%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="monitoring-card">
+                        <h3>SLO Burn Rate</h3>
+                        <div class="chart-container" style="position: relative; height: 300px;">
+                            <canvas id="burnRateChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="monitoring-card">
+                        <h3>Error Budget Status</h3>
+                        <div class="chart-container" style="position: relative; height: 300px;">
+                            <canvas id="errorBudgetChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chaos Engineering Section -->
+        <section class="section" id="chaos">
+            <div class="container">
+                <div class="section__header">
+                    <h2>Chaos Engineering</h2>
+                    <p>Proactive resilience testing to validate system reliability</p>
+                </div>
+                
+                <div class="chaos-grid">
+                    <div class="chaos-card">
+                        <div class="chaos-header">
+                            <h3>Pod Failure Injection</h3>
+                            <span class="chaos-frequency">Daily</span>
+                        </div>
+                        <p>Random pod termination to test auto-recovery mechanisms</p>
+                        <div class="chaos-results">
+                            <div class="chaos-metric">
+                                <span class="chaos-label">Success Rate</span>
+                                <span class="chaos-value">99.9%</span>
+                            </div>
+                            <div class="chaos-impact">
+                                <span class="impact-label">User Impact:</span>
+                                <span class="impact-value impact--none">None</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chaos-card">
+                        <div class="chaos-header">
+                            <h3>Network Latency Injection</h3>
+                            <span class="chaos-frequency">Weekly</span>
+                        </div>
+                        <p>Inject network delays between services to test timeout configurations</p>
+                        <div class="chaos-results">
+                            <div class="chaos-metric">
+                                <span class="chaos-label">Resilience Score</span>
+                                <span class="chaos-value">98%</span>
+                            </div>
+                            <div class="chaos-impact">
+                                <span class="impact-label">Improvement:</span>
+                                <span class="impact-value impact--positive">Timeout tuning</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chaos-card">
+                        <div class="chaos-header">
+                            <h3>Database Failover</h3>
+                            <span class="chaos-frequency">Monthly</span>
+                        </div>
+                        <p>Test database high availability and failover scenarios</p>
+                        <div class="chaos-results">
+                            <div class="chaos-metric">
+                                <span class="chaos-label">Recovery Time</span>
+                                <span class="chaos-value">5 seconds</span>
+                            </div>
+                            <div class="chaos-impact">
+                                <span class="impact-label">User Impact:</span>
+                                <span class="impact-value impact--minimal">Minimal</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chaos-summary">
+                        <h3>Chaos Engineering Results</h3>
+                        <div class="chart-container" style="position: relative; height: 300px;">
+                            <canvas id="chaosChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="section" id="results">
+            <div class="container">
+                <div class="section__header">
+                    <h2>Implementation Results</h2>
+                    <p>Measurable improvements in reliability, performance, and operational efficiency</p>
+                </div>
+                
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h3>Reliability Improvements</h3>
+                        <div class="improvement-item">
+                            <div class="improvement-header">
+                                <span class="improvement-metric">Service Uptime</span>
+                                <span class="improvement-change improvement-change--positive">+0.09%</span>
+                            </div>
+                            <div class="improvement-values">
+                                <span class="before-value">Before: 99.9%</span>
+                                <span class="after-value">After: 99.99%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="improvement-item">
+                            <div class="improvement-header">
+                                <span class="improvement-metric">MTTR</span>
+                                <span class="improvement-change improvement-change--positive">-82%</span>
+                            </div>
+                            <div class="improvement-values">
+                                <span class="before-value">Before: 45 minutes</span>
+                                <span class="after-value">After: 8 minutes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="result-card">
+                        <h3>Operational Efficiency</h3>
+                        <div class="improvement-item">
+                            <div class="improvement-header">
+                                <span class="improvement-metric">Deployment Frequency</span>
+                                <span class="improvement-change improvement-change--positive">7x</span>
+                            </div>
+                            <div class="improvement-values">
+                                <span class="before-value">Before: Weekly</span>
+                                <span class="after-value">After: Daily</span>
+                            </div>
+                        </div>
+                        
+                        <div class="improvement-item">
+                            <div class="improvement-header">
+                                <span class="improvement-metric">Failed Deployments</span>
+                                <span class="improvement-change improvement-change--positive">-83%</span>
+                            </div>
+                            <div class="improvement-values">
+                                <span class="before-value">Before: 12%</span>
+                                <span class="after-value">After: 2%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="result-card">
+                        <h3>Alert Quality</h3>
+                        <div class="improvement-item">
+                            <div class="improvement-header">
+                                <span class="improvement-metric">Alert Noise</span>
+                                <span class="improvement-change improvement-change--positive">-90%</span>
+                            </div>
+                            <div class="improvement-values">
+                                <span class="before-value">Before: 500/day</span>
+                                <span class="after-value">After: 50/day</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="results-chart-card">
+                        <h3>Overall Impact Metrics</h3>
+                        <div class="chart-container" style="position: relative; height: 400px;">
+                            <canvas id="resultsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
