@@ -1,0 +1,16 @@
+sre-ecommerce-platform/
+├── infrastructure/
+│   ├── terraform/
+│   │   ├── modules/
+│   │   │   ├── eks-cluster/
+│   │   │   ├── monitoring/
+│   │   │   ├── networking/
+│   │   │   └── security/
+│   │   ├── environments/
+│   │   │   ├── dev/
+│   │   │   ├── staging/
+│   │   │   └── prod/
+│   │   └── remote-state/
+│   └── kubernetes/
+│       ├── manifests/
+│  
